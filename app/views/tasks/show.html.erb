@@ -1,0 +1,12 @@
+ <div class="container">
+    <div class="task-details">
+      <h2 class="task-title"><i class="fas fa-tasks text-primary"></i> <%= @task.title %></h2>
+      <p class="task-description"><%= @task.details %></p>
+      <p class="task-completed"><strong>Status:</strong> <%= @task.completed ? 'Completed' : 'Incomplete' %></p>
+
+      <div>
+        <%= link_to "Back to Tasks", tasks_path, class: "back-link" %>
+        <%= link_to "Edit Task", edit_task_path(@task), class: "edit-link" %>
+      </div>
+    </div>
+  </div>

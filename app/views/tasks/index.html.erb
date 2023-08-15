@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="text-center"><i class="fas fa-seedling text-success"></i> Your Fleurie Tasks <i class="fas fa-seedling text-success"></i></h1>
+
+    <ul class="task-list">
+      <% @tasks.each do |task| %>
+        <li class="task-item">
+          <span><%= link_to task.title, task_path(task) %></span>
+          <span>
+            <%= link_to 'delete', task_path(task), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }, class: 'delete-link' %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="text-center add-task-button">
+      <%= link_to "Add Task", tasks_new_path, class: "btn btn-primary" %>
+    </div>
+  </div>

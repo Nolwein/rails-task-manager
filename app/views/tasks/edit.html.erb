@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="edit-form">
+      <h2 class="text-center"><i class="fas fa-sun text-warning"></i> Edit Task <i class="fas fa-sun text-warning"></i></h2>
+
+      <%= form_with model: @task do |f| %>
+        <div class="form-group">
+          <%= f.label :title, class: "form-label" %>
+          <%= f.text_field :title, class: "form-field" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :details, class: "form-label" %>
+          <%= f.text_field :details, class: "form-field" %>
+        </div>
+
+        <div class="form-group">
+          <label class="form-check-label">
+            <%= f.check_box :completed %>
+            Mark as Completed
+          </label>
+        </div>
+
+        <div class="submit-button">
+          <%= f.submit "Update Task", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
